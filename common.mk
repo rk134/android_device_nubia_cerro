@@ -77,9 +77,9 @@ AUDIO_HAL_DIR := hardware/qcom-caf/sm8650/audio/primary-hal
 AUDIO_PAL_DIR := hardware/qcom-caf/sm8650/audio/pal
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pineapple/audio_policy_configuration.xml \
-    $(COMMON_PATH)/audio/resourcemanager_pineapple_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pineapple/resourcemanager_pineapple_mtp.xml \
-    $(COMMON_PATH)/audio/usecaseKvManager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usecaseKvManager.xml
+    $(COMMON_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pineapple/audio_policy_configuration.xml \
+    $(COMMON_PATH)/configs/audio/resourcemanager_pineapple_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_pineapple/resourcemanager_pineapple_mtp.xml \
+    $(COMMON_PATH)/configs/audio/usecaseKvManager.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usecaseKvManager.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
@@ -119,8 +119,8 @@ PRODUCT_PACKAGES += \
     libgpu_tonemapper
 
 PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/display_id_4630946566460097411.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946566460097411.xml \
-    $(COMMON_PATH)/configs/display_id_4630947039571902851.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947039571902851.xml
+    $(COMMON_PATH)/configs/display/display_id_4630946566460097411.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946566460097411.xml \
+    $(COMMON_PATH)/configs/display/display_id_4630947039571902851.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947039571902851.xml
 
 $(call soong_config_set_bool,qtidisplay,legacy_pphwresourceinfo,true)
 
@@ -313,7 +313,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
@@ -393,7 +393,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(COMMON_PATH)/wifi,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
+    $(call find-copy-subdir-files,*,$(COMMON_PATH)/configs/wifi,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 # WiFi firmware symlinks
 PRODUCT_PACKAGES += \

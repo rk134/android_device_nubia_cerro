@@ -58,7 +58,7 @@ BOARD_USES_QCOM_MERGE_DTBS_SCRIPT := true
 TARGET_NEEDS_DTBOIMAGE := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/filesystem/config.fs
 
 # Fingerprint
 SOONG_CONFIG_qtidisplay_udfps := true
@@ -66,19 +66,19 @@ SOONG_CONFIG_qtidisplay_udfps := true
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    $(COMMON_PATH)/device_framework_matrix.xml
+    $(COMMON_PATH)/configs/vintf/device_framework_matrix.xml
 
 DEVICE_FRAMEWORK_MANIFEST_FILE := \
-    $(COMMON_PATH)/framework_manifest.xml
+    $(COMMON_PATH)/configs/vintf/framework_manifest.xml
 
 DEVICE_MANIFEST_FILE := \
-    $(COMMON_PATH)/manifest.xml
+    $(COMMON_PATH)/configs/vintf/manifest.xml
 
 DEVICE_MATRIX_FILE := \
     hardware/qcom-caf/common/compatibility_matrix.xml
 
 ODM_MANIFEST_FILES := \
-    $(COMMON_PATH)/manifest_odm.xml
+    $(COMMON_PATH)/configs/vintf/manifest_odm.xml
 
 # Init Boot
 BOARD_INIT_BOOT_HEADER_VERSION := 4
@@ -115,13 +115,13 @@ TARGET_KERNEL_SOURCE := kernel/nubia/sm8650
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/nubia/sm8650-modules
 
 # Kernel Modules
-BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.system_dlkm))
+BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/configs/modules/modules.load.system_dlkm))
 SYSTEM_KERNEL_MODULES := $(BOARD_SYSTEM_KERNEL_MODULES_LOAD)
-BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(COMMON_PATH)/modules.blocklist
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load))
+BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(COMMON_PATH)/configs/modules/modules.blocklist
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/configs/modules/modules.load))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE)
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.vendor_boot))
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/modules.load.recovery))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/configs/modules/modules.load.vendor_boot))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(COMMON_PATH)/configs/modules/modules.load.recovery))
 BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
 
 TARGET_KERNEL_EXT_MODULES := \
@@ -190,10 +190,10 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := pineapple
 
 # Properties
-TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
-TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
-TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/system_ext.prop
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_ODM_PROP += $(COMMON_PATH)/configs/properties/odm.prop
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/configs/properties/product.prop
+TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/configs/properties/system_ext.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/properties/vendor.prop
 
 # Recovery
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
