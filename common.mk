@@ -42,6 +42,11 @@ COMMON_PATH := device/nubia/sm8650-common
 BOARD_SHIPPING_API_LEVEL := 34
 PRODUCT_SHIPPING_API_LEVEL := 34
 
+# hardware/nubia soong namespace
+PRODUCT_SOONG_NAMESPACES += \
+    $(COMMON_PATH) \
+    hardware/nubia \
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.1-impl \
@@ -137,7 +142,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.nubia_sm8650
 
-$(call soong_config_set,surfaceflinger,udfps_lib,//$(COMMON_PATH):libudfps_extension.sm8650)
+$(call soong_config_set,surfaceflinger,udfps_lib,//hardware/nubia:libudfps_extension.nubia_sm8650)
 
 # GNSS
 PRODUCT_PACKAGES += \
@@ -309,7 +314,7 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.qsh_wrapper \
-    sensors.sm8650 \
+    sensors.nubia_sm8650 \
     android.hardware.sensors-service.multihal
 
 PRODUCT_COPY_FILES += \
