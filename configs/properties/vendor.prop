@@ -145,6 +145,13 @@ ro.camera.enableCamera1MaxZsl=1
 ro.vendor.feature.camera_under_screen_sensor=true
 vendor.camera.aux.packagelist=com.android.camera,org.lineageos.aperture
 
+# Camera - ZTE Camera Properties
+ro.vendor.feature.camera_series_info=NubiaZ60Ultra
+ro.vendor.feature.camera_zte_exif_model=nubia Z60 Ultra
+ro.vendor.feature.nubia.exif.module=NUBIA_Z60_ULTRA
+ro.vendor.product.ztename=nubia Z60 Ultra
+
+
 # Crypto
 ro.crypto.metadata_init_delete_all_keys.enabled=true
 ro.hardware.keystore_desede=true
