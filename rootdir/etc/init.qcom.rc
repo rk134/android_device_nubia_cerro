@@ -532,6 +532,10 @@ on post-fs-data
    chown system system /sys/kernel/lcd_enhance/monitor_name
    chown system system /sys/kernel/lcd_enhance/is_redmagic_monitor
 
+   # Nubia gpio-keys driver
+   chown system system /sys/devices/platform/soc/soc:gpio_keys_nubia/GamekeyStatus
+   chmod 666 /sys/devices/platform/soc/soc:gpio_keys_nubia/GamekeyStatus
+
    chmod 666 /sys/devices/platform/soc/soc:nubia_usb_switch_dp_gpio_ctrl/enable
    chmod 666 /sys/devices/platform/soc/soc:nubia_usb_switch_dp_gpio_ctrl/cc_statue
    chmod 666 /sys/kernel/lcd_enhance/edid_modes

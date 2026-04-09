@@ -131,6 +131,7 @@ phy-qcom-emu.ko
 phy-qcom-ufs-qmp-v4.ko
 pinctrl_lpi_dlkm.ko
 pinctrl-spmi-gpio.ko
+gpio-keys-nubia.ko
 pinctrl-spmi-mpp.ko
 pm8941-pwrkey.ko
 pmic_glink.ko
