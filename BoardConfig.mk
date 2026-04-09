@@ -193,6 +193,10 @@ TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := pineapple
 
+# Security patch
+BOOT_SECURITY_PATCH := 2025-12-01
+VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
+
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/configs/properties/odm.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/properties/product.prop
