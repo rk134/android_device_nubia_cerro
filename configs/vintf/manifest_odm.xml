@@ -18,4 +18,8 @@
         <name>vendor.zte.subsys</name>
         <fqname>ISubsys/subsys</fqname>
     </hal>
+    <hal format="aidl">
+        <name>android.hardware.secure_element</name>
+        <fqname>ISecureElement/eSE1</fqname>
+    </hal>
 </manifest>
