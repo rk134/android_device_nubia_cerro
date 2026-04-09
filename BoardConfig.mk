@@ -112,7 +112,8 @@ BOARD_BOOTCONFIG := \
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
     vendor/pineapple_GKI.config \
-    oem/pineapple_diff.config
+    oem/pineapple_diff.config \
+    oem/boards/cerro_diff.config
 
 TARGET_KERNEL_SOURCE := kernel/nubia/sm8650
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/nubia/sm8650-modules
