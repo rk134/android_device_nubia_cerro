@@ -206,8 +206,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
-    SettingsOverlayCOMMON \
-    SettingsOverlayVEUX
+    SettingsOverlayCommon \
+    SettingsProviderResCerro
 
 PRODUCT_PACKAGES += \
     CarrierConfigResCommon_Sys \
